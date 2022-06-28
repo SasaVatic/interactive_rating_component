@@ -1,0 +1,50 @@
+@use './media-queries' as media;
+@use './animations' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-blue);
+}
+
+main {
+  padding: 154px 20px;
+  margin-bottom: auto;
+
+  @include media.desktop {
+    padding: 195px 20px;
+  }
+}
+
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  color: var(--white);
+  padding: 20px;
+
+  @include media.desktop {
+    font-size: 16px;
+  }
+
+  &__page,
+  &__profile {
+    display: inline-block;
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1px solid var(--orange);
+    border-radius: 50%;
+    padding: 10px;
+    animation: animate-links 1s linear infinite alternate;
+
+    &:hover {
+      animation: none;
+    }
+  }
+}

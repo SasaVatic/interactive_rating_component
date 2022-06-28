@@ -1,0 +1,7 @@
+@use './variables' as variables;
+
+@mixin desktop {
+  @media (min-width: variables.$desktop-breakpoint) {
+    @content;
+  }
+}
